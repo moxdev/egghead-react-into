@@ -1,8 +1,10 @@
 <body>
-<div id="root"></div>
-<script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
-<script type="text/javascript">
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script type="text/babel">
+
 const rootElement = document.getElementById(
   'root',
 )
@@ -10,10 +12,20 @@ const rootElement = document.getElementById(
 // element.textContent = 'Hello World'
 // element.className = 'container'
 // rootElement.appendChild(element)
-const element = React.createElement('div', {
+// const element = React.createElement('div', {
+//   className: 'container',
+//   children: 'Hello World',
+// })
+
+const content = 'Hello World'
+const myClassName = 'container'
+const props = {
   className: 'container',
   children: 'Hello World',
-})
+}
+const element = <div {...props} />
+
+
 console.log(element)
 ReactDOM.render(element, rootElement)
 </script>
